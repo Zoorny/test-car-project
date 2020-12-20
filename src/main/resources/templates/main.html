@@ -43,20 +43,35 @@
         <p th:text="${errorMessage}" >Error Message</p>
 
         <label>Cars table</label>
+        <a th:href="@{/export}">Export to excel</a>
         <table border="1" style="width:300px">
+            <tr>
+                <td th:text="id"></td>
+                <td th:text="brand"></td>
+                <td th:text="model"></td>
+                <td th:text="releaseYear"></td>
+                <td th:text="releaseMonth"></td>
+                <td th:text="engineVolume"></td>
+                <td th:text="turbocharger"></td>
+                <td th:text="enginePower"></td>
+                <td th:text="transmission"></td>
+                <td th:text="driveUnit"></td>
+                <td th:text="car.body"></td>
+                <td th:text="color"></td>
+            </tr>
             <tr th:each="car : ${cars}">
-                <td th:text="${car.carId}">A Smoke Test'</td>
-                <td th:text="${car.brand}">A Smoke Test'</td>
-                <td th:text="${car.model}">A Smoke Test'</td>
-                <td th:text="${car.releaseYear}">A Smoke Test'</td>
-                <td th:text="${car.releaseMonth}">A Smoke Test'</td>
-                <td th:text="${car.engineVolume}">A Smoke Test'</td>
-                <td th:text="${car.turbocharger}">A Smoke Test'</td>
-                <td th:text="${car.enginePower}">A Smoke Test'</td>
-                <td th:text="${car.transmission}">A Smoke Test'</td>
-                <td th:text="${car.driveUnit}">A Smoke Test'</td>
-                <td th:text="${car.body}">A Smoke Test'</td>
-                <td th:text="${car.color}">A Smoke Test'</td>
+                <td th:text="${car.carId}"></td>
+                <td th:text="${car.brand}"></td>
+                <td th:text="${car.model}"></td>
+                <td th:text="${car.releaseYear}"></td>
+                <td th:text="${car.releaseMonth}"></td>
+                <td th:text="${car.engineVolume}"></td>
+                <td th:text="${car.turbocharger}"></td>
+                <td th:text="${car.enginePower}"></td>
+                <td th:text="${car.transmission}"></td>
+                <td th:text="${car.driveUnit}"></td>
+                <td th:text="${car.body}"></td>
+                <td th:text="${car.color}"></td>
             </tr>
         </table>
     </body>
