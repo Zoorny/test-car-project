@@ -7,9 +7,11 @@ import com.tecom.database.model.enumerations.Transmission;
 import com.tecom.database.repository.CarRepository;
 import com.tecom.services.CarExportService;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -83,6 +85,13 @@ public class CarController {
         response.setHeader(headerKey, headerValue);
         Iterable<Car> cars = carRepository.findAll();
         carExportService.export(response, cars);
+    }
+
+    @GetMapping("/sort/{field}")
+    public String sortByField(@PathVariable String field, Model model) {
+        Iterable<Car> cars = carRepository.findAll(Sort.by(Sort.Direction.ASC, field));
+        model.addAttribute("cars", cars);
+        return "main";
     }
 
     private void updateCar(Car update, Car entity) {

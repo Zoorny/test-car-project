@@ -47,17 +47,17 @@
         <table border="1" style="width:300px">
             <tr>
                 <td th:text="id"></td>
-                <td th:text="brand"></td>
-                <td th:text="model"></td>
-                <td th:text="releaseYear"></td>
-                <td th:text="releaseMonth"></td>
-                <td th:text="engineVolume"></td>
-                <td th:text="turbocharger"></td>
-                <td th:text="enginePower"></td>
-                <td th:text="transmission"></td>
-                <td th:text="driveUnit"></td>
-                <td th:text="car.body"></td>
-                <td th:text="color"></td>
+                <td><a th:href="@{/sort/brand}">brand</a></td>
+                <td><a th:href="@{/sort/model}">model</a></td>
+                <td><a th:href="@{/sort/releaseYear}">releaseYear</a></td>
+                <td><a th:href="@{/sort/releaseMonth}">releaseMonth</a></td>
+                <td><a th:href="@{/sort/engineVolume}">engineVolume</a></td>
+                <td><a th:href="@{/sort/turbocharger}">turbocharger</a></td>
+                <td><a th:href="@{/sort/enginePower}">enginePower</a></td>
+                <td><a th:href="@{/sort/transmission}">transmission</a></td>
+                <td><a th:href="@{/sort/driveUnit}">driveUnit</a></td>
+                <td><a th:href="@{/sort/body}">body</a></td>
+                <td><a th:href="@{/sort/color}">color</a></td>
             </tr>
             <tr th:each="car : ${cars}">
                 <td th:text="${car.carId}"></td>
