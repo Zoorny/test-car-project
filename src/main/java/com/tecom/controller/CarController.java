@@ -37,7 +37,7 @@ public class CarController {
         return "main";
     }
 
-    @PostMapping("addRecord")
+    @PostMapping("/addRecord")
     public String addRecord(@RequestParam String brand, @RequestParam String model, @RequestParam int releaseYear,
                       @RequestParam int releaseMonth, @RequestParam int engineVolume, @RequestParam String turbocharger,
                       @RequestParam int enginePower, @RequestParam String transmission, @RequestParam String driveUnit,
@@ -51,7 +51,7 @@ public class CarController {
         return "main";
     }
 
-    @PostMapping("deleteRecord")
+    @PostMapping("/deleteRecord")
     public String deleteRecord(@RequestParam String id, Model model) {
         try {
             carRepository.deleteById(Long.valueOf(id));
@@ -63,7 +63,7 @@ public class CarController {
         return "main";
     }
 
-    @PostMapping("updateRecord")
+    @PostMapping("/updateRecord")
     public String updateRecord(@RequestParam String id, @RequestParam String brand, @RequestParam String model, @RequestParam int releaseYear,
                                @RequestParam int releaseMonth, @RequestParam int engineVolume, @RequestParam String turbocharger,
                                @RequestParam int enginePower, @RequestParam String transmission, @RequestParam String driveUnit,
